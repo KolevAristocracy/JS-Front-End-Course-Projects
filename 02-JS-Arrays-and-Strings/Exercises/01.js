@@ -1,8 +1,22 @@
-function arrayRotation(arr, num) {
-    for (let i = 0; i < num; i++) {
-        let firstEl = arr.shift()
-        arr.push(firstEl)
+// function arrayRotation(arr, num) {
+//     num = num % arr.length; // optimization for rotations
+//     for (let i = 0; i < num; i++) {
+//         let firstEl = arr.shift()
+//         arr.push(firstEl)
+//     }
+//     console.log(arr.join(" "))
+// }
+
+
+// More opimized solution
+
+function arrayRotation(arr, rotations) {
+    const result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        result.push(arr[(rotations + i) % arr.length]);
     }
+    
     console.log(arr.join(" "))
 }
 
