@@ -20,6 +20,7 @@ class Vehicle {
 // vehicle.drive(100);
 // console.log(vehicle.fuel);
 // console.log(vehicle.parts.quality);
+
 let parts = { engine: 9, power: 500 };
 let vehicle = new Vehicle('l', 'k', parts, 840);
 vehicle.drive(20);
