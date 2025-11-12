@@ -12,7 +12,6 @@ function addressBook(arr) {
         console.log(`${sortedBook[key][0]} -> ${sortedBook[key][1]}`);
 
     }
-    
 }
 
 
