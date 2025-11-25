@@ -66,9 +66,8 @@ function solve() {
                 horizontalChecker[values[j]] = true;
                 verticalChecker[j][values[j]] = true;
             }
-
-            return true;
         }
+        return true;
     }
 
 };
