@@ -15,9 +15,9 @@ function attachEvents() {
 
         await fetch('http://localhost:3030/jsonstore/messenger', {
             method: "POST",
-            headers: {"Content-Type": "application/json"},
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ "author": authorName, "content": message }),
-        });        
+        });
 
         inputNameEl.value = ''
         inputMessageEl.value = ''
@@ -28,12 +28,11 @@ function attachEvents() {
         const data = await res.json();
 
         textAreaEl.value = '';
-        for (const msg in data) {
-            const author = data[msg].author;
-            const content = data[msg].content;
+        const messages = Object.values(data)
+            .map(msg => `${msg.author}: ${msg.content}`)
+            .join('\n');
 
-            textAreaEl.value += `${author}: ${content}\n`
-        };
+        textAreaEl.value = messages
     };
 
 }
